@@ -39,3 +39,7 @@ Make a paint bucket function that fills the entire canvas with one color. (It wi
 **Create an eraser**
 
 Tips: It's easiest to add this as a brush type. If you use the same color as the background it can look like you're erasing when you're technically painting over the image.
+
+**Viewing your paint program online**
+
+Github will turn anything in a branch called `gh-pages` into a hosted webpage. Whenever you are done (or if you've completed a feature), sync your code with Github and view your program at http://username.github.io/paint (where username is your github username). This is a public link that you can share with others. 
