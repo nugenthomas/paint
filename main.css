@@ -1,0 +1,100 @@
+body {
+    background-color: #fefefe;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #545454;
+    background-color: #ffffff;
+}
+
+#wrapper{
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #dedede;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+input.color {
+    border: 0px #ccc;
+    font-family: inherit;
+    height: 3em;
+    border-radius: 2px;
+    width: 5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+h1{
+    color: #000;
+}
+button {
+    height: 3em;
+    border: none;
+    outline: none;
+    background: #dfdfdf;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2px;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-family: inherit;
+    text-transform:uppercase;
+    
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.clearButton {
+    background-color: #99DDEE;
+    color: #105062;
+    float: right;
+}
+
+.clearButton:hover {
+    background-color: #88CCDD;
+    color: #0d3f4b;
+}
+
+.saveButton {
+    background-color: #88EE66;
+    color: #20770c;
+    float: right;
+}
+
+.saveButton:hover {
+    background-color: #77DD55;
+    color: #175509;
+}
+
+button:hover {
+    background: #ccc;
+}
+
+.toolbarElement {
+    margin:0 0.25em;
+}
+#drawingContainer{
+    margin:40px 0;
+}
+
+.control{
+    float: left;
+    padding: 0 20px 40px 0;
+}
+label{
+    display: block;
+}

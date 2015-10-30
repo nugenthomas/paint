@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <title>Paint</title>
+
+		<script language="javascript" src="helpers/p5.js"></script>
+		<script language="javascript" src="helpers/p5.dom.js"></script>
+
+		<script type="text/javascript" src="jscolor/jscolor.js"></script>
+
+	  <script language="javascript" src="sketch.js"></script>
+
+		<link rel="stylesheet" href="main.css">
+	</head>
+
+	<body>
+			<div id="wrapper">
+		    <h1>Paint</h1>
+        
+        <!-- Drawing controls -->
+        <div class="control">
+	        <label>Color </label>
+	        <input class="toolbarElement color {pickerPosition:'top', pickerInsetColor:'#777 #777 #777 #777', pickerBorderColor:'#777 #777 #777 #777', pickerFaceColor:'#eee'}" id="ColorPicker" value="000000" /> 
+	      </div>     
+
+        <div class="control">
+	        <label>Brush size</label>
+	        <span class="toolbarElement" id="brushSize"></span>
+	      </div>
+
+        <div class="control">
+        	<label>Brush type</label>
+        	<div id="brushType"></div>
+
+	      </div>
+
+
+	      <!-- Save and Clear Buttons, set to float right in CSS -->
+				<button class="toolbarElement saveButton" type="button">
+            Save
+        </button>
+        <button class="toolbarElement clearButton" type="button">
+            Clear
+        </button>
+	    
+				<div id="drawingContainer"></div>
+
+		</div>
+	</body>
+</html>
