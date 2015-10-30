@@ -19,7 +19,7 @@ To do this you can put if statments inside of if statements:
     
     }
 
-This saves you the trouble of having to check if mouseIsPressed in every if statment.
+This saves you the trouble of having to check if `mouseIsPressed` in every if statment.
 
     if(mouseIsPressed && brushType == "standard"){
     		//do something
@@ -61,7 +61,7 @@ Cursor
 ------
 You can customize what your cursor looks like. There are some standard ones you can use, or you can upload an image to use. 
 
-Standar options: 
+Standar options: ARROW, CROSS, HAND, MOVE, TEXT, or WAIT
 `cursor(CROSS);`
 
 Using an image:
@@ -75,7 +75,7 @@ p5 makes it easy to download an image of your canvas. All you have to do is:
 
 `save(drawingCanvas, "myDrawing.jpg");`
 
-Where drawingCanvas is the variable you saved your canvas to, and "myDrawing.jpg" is the file name you want to save it as.
+Where `drawingCanvas` is the variable you saved your canvas to, and `"myDrawing.jpg"` is the file name you want to save it as.
 
 
 
