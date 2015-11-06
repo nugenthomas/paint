@@ -11,12 +11,20 @@ var brushPicker;
 var brushType;
 
 var pumpkin;
+var eraser;
+var splatter;
 
 
 
 function preload(){
     pumpkin = loadImage("images/pumpkin.png");
+    eraser = loadImage("images/eraser.png");
+    splatter = loadImage("images/splatter.png");
+    star = loadImage ("images/star.png");
+    spray = loadImage ("images/spray.png");
+    enzo = loadImage ("images/enzo.png");
     imageMode(CENTER);
+    
 }
 
 
@@ -31,19 +39,27 @@ function setup() {
     colorPicker = select("#ColorPicker");
     
     //set up the paintbrush width slider
-    slider = createSlider(1, 50, 10);
+    slider = createSlider(1, 70, 10);
     slider.parent('brushSize');
 
     //set up the save button
     saveButton = select('.saveButton');
     saveButton.mouseClicked(saveFunction);
 
+    //set up the clear button
+    clearButton = select('.clearButton');
+    clearButton.mouseClicked(clearFunction);
+
     //set up the brush type
     brushPicker = createSelect();
     brushPicker.parent("brushType")
-    brushPicker.option('paint brush');
-    brushPicker.option('spray can');
-    brushPicker.option('image');
+    brushPicker.option('Paint Brush');
+    brushPicker.option('Splatter Brush');
+    brushPicker.option ('Star Brush');
+    brushPicker.option ('Calligraphy Brush');
+    brushPicker.option('Spray Can');
+    brushPicker.option ('Eraser');
+    brushPicker.option ('Paint Bucket');
     brushPicker.changed(changeBrush);
     brushType = brushPicker.value();
 }
@@ -51,25 +67,49 @@ function setup() {
 function draw() {
     
     if (mouseIsPressed) {
-        if (brushType == "spray can"){
+        if (brushType == "Spray Can"){
+            cursor("images/spray.png");
             sprayCan();
-        } else if(brushType == "paint brush"){
+        } else if(brushType == "Paint Brush"){
+            cursor(CROSS);
             standardStroke(); 
-        } else if(brushType == "image"){
+        } else if(brushType == "Splatter Brush"){
+            cursor("images/gun.png");
             drawImage(); 
+        } else if(brushType == "Eraser"){
+            cursor("images/eraser.png");
+            eraseImage();
+        } else if (brushType == "Star Brush"){
+            cursor("images/wand.png");
+            drawImages();
+        } else if (brushType == "Paint Bucket"){
+            cursor("images/bucket.png");
+            fillImages();
+        } else if (brushType == "Calligraphy Brush"){
+            cursor("images/brush.png");
+            drawBrush();
         }
-        
-    } else {
-        //Cursor options: ARROW, CROSS, HAND, MOVE, TEXT, or WAIT, or path for image
-        //if you use an image, the recommended size is 16x16 or 32x32 pixels
-        cursor(CROSS);
-    }
+    } 
 }
 
 //--------------------------
 // Brushes
 //--------------------------
+function eraseImage(){
 
+    strokeWeight(slider.value());
+    stroke("#FFFFFF");
+    line(pmouseX, pmouseY, mouseX, mouseY);
+
+}
+
+function fillImages(){
+    background("#"+colorPicker.value());
+}
+
+function drawBrush(){
+    image(enzo, mouseX, mouseY, slider.value(), slider.value());
+}
 function standardStroke(){
     //set the size of the brush from the slider
     strokeWeight(slider.value());
@@ -104,7 +144,14 @@ function sprayCan(){
 
 function drawImage(){
     //draw the image where the mouse is and set the size to the brush size
-    image(pumpkin,mouseX,mouseY, slider.value(), slider.value());
+    image(splatter,mouseX,mouseY, slider.value(), slider.value());
+
+}
+
+function drawImages(){
+
+    image(star,mouseX,mouseY, slider.value(), slider.value());
+
 }
 
 //--------------------------
@@ -118,4 +165,10 @@ function changeBrush(){
 
 function saveFunction() {
     save(drawingCanvas, "myDrawing.jpg");
+}
+
+function clearFunction() {
+    clear(drawingCanvas);
+    background("white");
+
 }

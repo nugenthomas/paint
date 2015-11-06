@@ -21,17 +21,25 @@ To create a new input option you need to:
 * Use its value to do something in the draw() function
 
 
-Challenges
+Assignment
 -----------
 
 **Make the clear button work**
+
 Take a look at how the save button is set up. I've given you the HTML already so all you only need to edit the sketch.js file to get it to work.
 
 **Make 3 new brushes**
+
 Add 3 new options to the brush type drop-down. They can use shapes or images.
 
 **Paint bucket**
+
 Make a paint bucket function that fills the entire canvas with one color. (It will have to cover any existing drawing on the canvas.)
 
 **Create an eraser**
+
 Tips: It's easiest to add this as a brush type. If you use the same color as the background it can look like you're erasing when you're technically painting over the image.
+
+**Viewing your paint program online**
+
+Github will turn anything in a branch called `gh-pages` into a hosted webpage. Whenever you are done (or if you've completed a feature), sync your code with Github and view your program at http://username.github.io/paint (where username is your github username). This is a public link that you can share with others. 
